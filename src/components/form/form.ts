@@ -10,6 +10,7 @@ const UserInputs: Product = {
     id: "",
     date: "",
     price: "",
+    url: "",
 }
 
 export class AppForm extends HTMLElement {
@@ -24,7 +25,7 @@ export class AppForm extends HTMLElement {
 
   render() {
     const labelnamefood = this.ownerDocument.createElement("label");
-    labelnamefood.textContent = "Name";
+    labelnamefood.textContent = "Platillo";
     const namefood = this.ownerDocument.createElement("input");
     namefood.type = "text";
     namefood.addEventListener("change", (e: any) => {
@@ -47,6 +48,14 @@ export class AppForm extends HTMLElement {
       UserInputs.foodlist = e.target.value;
     });
 
+    const labelurl = this.ownerDocument.createElement("label");
+    labelurl.textContent = "Imagen url";
+    const url = this.ownerDocument.createElement("input");
+    url.type = "text";
+    url.addEventListener("change", (e: any) => {
+      UserInputs.foodlist = e.target.value;
+    });
+
     const labelprice = this.ownerDocument.createElement("label");
     labelprice.textContent = "Precio del platillo";
     const price = this.ownerDocument.createElement("input");
@@ -63,6 +72,7 @@ export class AppForm extends HTMLElement {
         namefood: namefood.value,
         igrfood: igrfood.value,
         foodlist: foodlist.value,
+        url: url.value,
         id: "",
         price: price.value,
         date: currentDate.toLocaleString(), 
@@ -77,6 +87,8 @@ export class AppForm extends HTMLElement {
     this.shadowRoot?.appendChild(igrfood);
     this.shadowRoot?.appendChild(labelfoodlist);
     this.shadowRoot?.appendChild(foodlist);
+    this.shadowRoot?.appendChild(labelurl);
+    this.shadowRoot?.appendChild(url);
     this.shadowRoot?.appendChild(labelprice);
     this.shadowRoot?.appendChild(price);
     this.shadowRoot?.appendChild(button);

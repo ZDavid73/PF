@@ -5,4 +5,5 @@ export interface Product {
     id: string;
     date:string;
     price: string;
+    url: string;
 };

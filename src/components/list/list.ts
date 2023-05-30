@@ -64,6 +64,9 @@ export class Appproductslist extends HTMLElement {
       const pcontainerfoodlist = this.ownerDocument.createElement("h6");
       pcontainerfoodlist.textContent = product.foodlist;
 
+      const pcontainerurl = this.ownerDocument.createElement("h10");
+      pcontainerurl.textContent = product.url;
+
       const date = new Date(product.date);
       const dateString = date.toDateString();
       const timeString = date.toLocaleTimeString();
@@ -82,6 +85,7 @@ export class Appproductslist extends HTMLElement {
       pcontainer?.appendChild(pcontainerigrfood);
       pcontainer?.appendChild(pcontainerfoodlist);
       pcontainer?.appendChild(pcontainerprice);
+      pcontainer?.appendChild(pcontainerurl);
       pcontainer?.appendChild(pcontainerdate);
       pcontainer?.appendChild(likeButton);
       pcontainer?.appendChild(dislikeButton);
